@@ -1,0 +1,10 @@
+body {
+  font-size: 14px;
+  height: 100vh;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
