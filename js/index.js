@@ -65,6 +65,7 @@ $('.music-bar').onclick  = function(e){
 getMusicList(function(list){
   musicList = list
   loadMusic(list[musicArr])
+  obtainList(list)
 })
 
 function getMusicList(callback){
@@ -88,6 +89,15 @@ function loadMusic(musicObj){
   $('.author').innerText = musicObj.author
   $('.cover').style.backgroundImage = 'url(' + musicObj.image + ')'
   audio.src = musicObj.src
+}
+
+function obtainList(list){
+  var html = ''
+  for(var i=0; i<list.length; i++){
+    html += '<li>' + list[i].author + '-' +list[i].track + '</li>'
+  }
+  console.log(html)
+  $('.music-list').innerHTML = html
 }
 
 
